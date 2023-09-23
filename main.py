@@ -38,13 +38,16 @@ def union(new_list):
                 if contact[6] == "":
                     contact[6] = new_contact[6]
 
+
+
     result_list = list()
     for i in new_list:
         if i not in result_list:
             result_list.append(i)
 
+
     return result_list
 
 with open("phonebook.csv", "w", encoding="utf-8") as f:
     datawriter = csv.writer(f, delimiter=',')
-    datawriter.writerows(main(contacts_list))
+    datawriter.writerows(union(main(contacts_list)))
